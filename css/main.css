@@ -1,0 +1,401 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+   }
+
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+  }
+  
+  /*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */
+  
+  ::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+  
+  ::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+  
+  /*
+   * A better looking default horizontal rule
+   */
+  
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+  
+  /*
+   * Remove the gap between audio, canvas, iframes,
+   * images, videos and the bottom of their containers:
+   * https://github.com/h5bp/html5-boilerplate/issues/440
+   */
+  
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle;
+  }
+  
+  /*
+   * Remove default fieldset styles.
+   */
+  
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*
+   * Allow only vertical resizing of textareas.
+   */
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+  
+  /* ==========================================================================
+     Helper classes
+     ========================================================================== */
+  
+  /*
+   * Hide visually and from screen readers
+   */
+  
+  .hidden,
+  [hidden] {
+    display: none !important;
+  }
+  
+  /*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+  
+  .sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
+  }
+  
+  /*
+   * Extends the .sr-only class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+  
+  .sr-only.focusable:active,
+  .sr-only.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
+  }
+  
+  /*
+   * Hide visually and from screen readers, but maintain layout
+   */
+  
+  .invisible {
+    visibility: hidden;
+  }
+  
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  
+  .clearfix::before,
+  .clearfix::after {
+    content: " ";
+    display: table;
+  }
+  
+  .clearfix::after {
+    clear: both;
+  }
+  
+  /* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+  
+  @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+  }
+  
+  @media print,
+    (-webkit-min-device-pixel-ratio: 1.25),
+    (min-resolution: 1.25dppx),
+    (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+  }
+  
+  /* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+  
+  @media print {
+    *,
+    *::before,
+    *::after {
+      background: #fff !important;
+      color: #000 !important;
+      /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+  
+    a[href]::after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]::after {
+      content: " (" attr(title) ")";
+    }
+  
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+  
+    pre {
+      white-space: pre-wrap !important;
+    }
+  
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+  
+    /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+      display: table-header-group;
+    }
+  
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+  
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+  
+  .heading{
+    display: flex;
+  }
+  .heading-text{width: 50%;
+    font-family: sans-serif;
+    padding: 140px 145px;
+  }
+  .heading-text h2{font-size: 40px;
+    font-family: 'Montserrat';
+  }
+  .heading-text p {
+    padding-bottom: 27px;
+}
+  
+  .txt_color{
+    color: salmon;
+  }
+  .order_btn{
+  background-image: linear-gradient(salmon tomato);
+  padding: 15px 25px;
+  font-family: sans-serif;
+  font-size: 25px;
+  border-radius: 30px;
+  border: none;
+  background-image: linear-gradient(#ff4b00, #ff830cfc);
+  color: white;
+  box-shadow: 1px 0px 7px 0px #888888;
+  cursor: pointer;
+  text-decoration: none;
+  }
+  .heading-img{
+padding: 30px;
+  
+  }
+
+  /* heading section end */
+
+  /* About us section */
+  .about{
+    background-image: url(/img/7.png);
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+  padding: -2px 7px;}
+  .about-us-text{
+width: 50%;
+    
+  }
+  .about-us-img img {
+    width: 300px;
+    padding: 0px 264px;
+}
+.about-us-text p {
+  margin-bottom: 86px;
+width: 540px;}
+
+  /* About us section End*/
+
+
+  /* my recipi section :start */
+  
+.my_recipi_text {
+  font-family: 'Montserrat';
+}
+
+.my_recipi_text h2 {
+  text-align: center;
+}
+
+.my_recipi_text p {width: 611px;margin: auto;text-align: center;}
+
+.my_recipi_text {
+  padding: 25px;
+}
+
+
+.card {
+  padding: 14px 10px;
+  width: 324px;
+  /* text-align: center; */
+  box-shadow: 1px 0px 7px 0px #888888;
+  margin: 0px 25px;
+  border-radius: 24px;
+}
+
+.card-img img {
+  width: 281px;
+  margin-left: 20px;
+}
+
+.card-section {
+  display: flex;
+  margin-left: 40px;
+  /* border-radius: 195px; */
+margin-left: 234px;}
+
+.info_sub{
+  display: flex;
+  box-shadow: 1px 0px 7px 0px #888888;
+  padding: 24px;
+  border-radius: 25px;
+  text-align: center;
+}
+.info_main{
+  padding: 77px 110px;
+}
+
+.info_main h2{
+  font-family: 'Montserrat';
+}
+.info {
+  width: 400px;
+
+}
+
+
+.footer-sec{
+  background: #000;
+  padding: 50px 50px
+}
+.footer{
+  text-align: center;
+}
+.footer p{
+  color: #ccc;
+}
+span.txt_color1 {
+  color: gray;
+}
+
+.about-us-text h2 {padding: 30px 0px;font-size: 40px;color: gray;}
